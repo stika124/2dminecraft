@@ -1,0 +1,21 @@
+
+<div id="a"></div>
+<div id="b"></div>
+<input type="range" min="0" max="255" step="1" id="red">
+<script>
+  let h = window.innerHeight;
+  let g = "#000000";
+  for (let y = 0; y < 5; y++) {
+    for (let x = 0; x < 5; x++) {
+      let i = document.createElement("div")
+      i.style.position = "absolute";
+      i.style.top = `${h/5*y}px`;
+      i.style.left = `${h/5*x}px`;
+      i.onclick = () => {
+        i.style.background = g;
+      };
+    }
+  }
+
+  setInterval(() => {}, 50)
+</script>
