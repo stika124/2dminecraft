@@ -14,8 +14,15 @@
       i.onclick = () => {
         i.style.background = g;
       };
+      document.getElementById("a").appendChild(i)
     }
   }
 
-  setInterval(() => {}, 50)
+  setInterval(() => {
+    g = `#${[
+      document.getElementById("red").value, 
+      document.getElementById("green").value, 
+      document.getElementById("blue").value].map(x => x.toString(16).padStart(2, "0")}`
+    document.getElementById("b").style.background = g
+  }, 50)
 </script>
