@@ -45,7 +45,7 @@
     g = `#${[
       document.getElementById("red").value, 
       document.getElementById("green").value, 
-      document.getElementById("blue").value].map(x => x.toString(16).padStart(2, "0")).join("")}`
+      document.getElementById("blue").value].map(x => Number(x).toString(16).padStart(2, "0")).join("")}`
     document.getElementById("b").style.background = g
   }, 50)
 </script>
