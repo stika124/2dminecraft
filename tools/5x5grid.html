@@ -2,6 +2,7 @@
   * {
    overflow: hidden;
    box-sizing: border-box;
+   font-family: white;
   }
   #b {
     position: absolute;
@@ -14,13 +15,13 @@
     width: 100px;
   }
   #red {
-    bottom: 26px;
+    bottom: 56px;
   }
   #green {
-    bottom: 16px;
+    bottom: 36px;
   }
   #blue {
-    bottom: 6px;
+    bottom: 16px;
   }
 </style>
 <div id="a"></div>
@@ -44,6 +45,7 @@
       i.onclick = () => {
         i.style.background = g;
         i.innerText = g;
+        i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
       };
       document.getElementById("a").appendChild(i)
     }
