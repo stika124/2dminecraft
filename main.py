@@ -1,5 +1,6 @@
 import random
 import pygame
+import json
 
 class Info:
   def __init__(self):
@@ -29,7 +30,17 @@ def getBlockPixels(x, y, subX=0, subY=0):
   return [(x-camera[0])*DATA["blockWidth"]+subX*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["widthScreen"]/2, 
           (y-camera[1])*DATA["blockWidth"]+subY*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["heightScreen"]/2]
 
-import json
+
 with open("blocks.json") as file:
   blocks = json.load(file)
-print(blocks)
+
+clock = pygame.time.Clock()
+while True:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      running = False
+
+  screen.fill((255, 255, 255))
+  pygame.display.flip()
+  clock.tick(60)
+pygame.quit()
