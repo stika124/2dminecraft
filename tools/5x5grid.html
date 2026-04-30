@@ -2,10 +2,12 @@
   #b {
     position: absolute;
     top: 6px; right: 6px;
+    border: 1px solid black;
   }
   #red, #green, #blue {
     position: absolute;
     right: 6px;
+    width: 100px;
   }
   #red {
     bottom: 26px;
@@ -24,6 +26,7 @@
 <input type="range" min="0" max="255" step="1" id="blue">
 <script>
   let h = window.innerHeight;
+  let w = window.innetWidth;
   let g = "#000000";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
@@ -47,5 +50,7 @@
       document.getElementById("green").value, 
       document.getElementById("blue").value].map(x => Number(x).toString(16).padStart(2, "0")).join("")}`
     document.getElementById("b").style.background = g
+    document.getElementById("b").style.width = `${w-h-6}px`;
+    document.getElementById("b").style.height = `${h/5}px`;
   }, 50)
 </script>
