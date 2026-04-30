@@ -2,17 +2,17 @@ import random
 import pygame
 
 class Info:
-  __init__(self):
+  def __init__(self):
     pass
 
-  getRandom(self, f, t):
+  def getRandom(self, f, t):
     return f + random.random() * (t - f)
 
 DATA = {
   "blockWidth": 100,
   "blockSubPixels": 5,
   "widthScreen": 600,
-  "heigthScreen": 400
+  "heightScreen": 400
 }
 
 pygame.init()
@@ -26,10 +26,10 @@ world = [
   }
 ]
 def getBlockPixels(x, y, subX=0, subY=0):
-  return [(x-camera[0])*DATA["blockWidth"]+subX*(DATA["blockWidth"]/DATA["blockSubPixels"]), 
-          (y-camera[1])*DATA["blockWidth"]+subY*(DATA["blockWidth"]/DATA["blockSubPixels"])]
+  return [(x-camera[0])*DATA["blockWidth"]+subX*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["widthScreen"]/2, 
+          (y-camera[1])*DATA["blockWidth"]+subY*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["heightScreen"]/2]
 
 import json
 with open("blocks.json") as file:
-  blocks = json.parse(file.read())
+  blocks = json.load(file)
 print(blocks)
