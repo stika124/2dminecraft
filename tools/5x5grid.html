@@ -1,7 +1,27 @@
-
+<style>
+  #b {
+    position: absolute;
+    top: 6px; right: 6px;
+  }
+  #red, #green, #blue {
+    position: absolute;
+    right: 6px;
+  }
+  #red {
+    bottom: 26px;
+  }
+  #green {
+    bottom: 16px;
+  }
+  #blue {
+    bottom: 6px;
+  }
+</style>
 <div id="a"></div>
 <div id="b"></div>
 <input type="range" min="0" max="255" step="1" id="red">
+<input type="range" min="0" max="255" step="1" id="green">
+<input type="range" min="0" max="255" step="1" id="blue">
 <script>
   let h = window.innerHeight;
   let g = "#000000";
