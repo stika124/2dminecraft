@@ -21,12 +21,12 @@
 </style>
 <div id="a"></div>
 <div id="b"></div>
-<input type="range" min="0" max="255" step="1" id="red">
-<input type="range" min="0" max="255" step="1" id="green">
-<input type="range" min="0" max="255" step="1" id="blue">
+<input type="range" min="0" max="255" step="1" id="red" class="range">
+<input type="range" min="0" max="255" step="1" id="green" class="range">
+<input type="range" min="0" max="255" step="1" id="blue" class="range">
 <script>
   let h = window.innerHeight;
-  let w = window.innetWidth;
+  let w = window.innerWidth;
   let g = "#000000";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
@@ -52,5 +52,9 @@
     document.getElementById("b").style.background = g
     document.getElementById("b").style.width = `${w-h-6}px`;
     document.getElementById("b").style.height = `${h/5}px`;
+    document.getElementById("b").innerText = g;
+    document.querySelectorAll(".range").forEach(k => {
+      k.style.width = `${w-h-6}px`
+    });
   }, 50)
 </script>
