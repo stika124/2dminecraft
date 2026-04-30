@@ -23,27 +23,31 @@
   #blue {
     bottom: 16px;
   }
-  button {
+  [onclick^="t"] {
    position: absolute;
    top: 50vh;
-   rigth: 6px;
+   right: 6px;
   }
+ 
 </style>
 <div id="a"></div>
 <div id="b"></div>
 <input type="range" min="0" max="255" step="1" id="red" class="range">
 <input type="range" min="0" max="255" step="1" id="green" class="range">
 <input type="range" min="0" max="255" step="1" id="blue" class="range">
-<button onclick="tt()">off</button>
+<button onclick="tt()">paint off</button>
+<button onclick="gg()">grid off</button>
 <script>
   let h = window.innerHeight;
   let w = window.innerWidth;
   let can = true;
+  let grid = true;
   let tt = () => can = !can;
   let g = "#000000";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
       let i = document.createElement("div")
+      i.className = "grid"
       i.style.position = "absolute";
       i.style.top = `${h/5*y}px`;
       i.style.left = `${h/5*x}px`;
@@ -76,6 +80,8 @@
       k.style.width = `${w-h-12}px`
     });
 
-   document.querySelector("[onclick^='t']").innerText = can ? "off" : "on"
+   document.querySelector("[onclick^='t']").innerText = can ? "paint off" : "paint on";
+   document.querySelector("[onclick^='g']").innerText = grid ? "grid off" : "grid on";
+   document.querySelectorAll(".grid").forEach(l => l.style.border = grid ? "1px solid black" : "none")
   }, 50)
 </script>
