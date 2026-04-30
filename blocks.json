@@ -1,5 +1,51 @@
 {
-  "test": {
-    "face": 
+  "grass_block": {
+    "face": [
+      [
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""}
+      ], [
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""}
+      ], [
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""}
+      ], [
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""}
+      ], [
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""},
+        {"color": ""}
+      ]
+    ],
+    "other": {
+      "breakTime": 1000,
+      "drops": {
+        "beforeCode": "",
+        "conditions": [
+          {
+            "condition": "True",
+            "items": [
+              {"item": "dirt"}
+            ]
+          }
+        ]
+      }
+    }
   }
 }
