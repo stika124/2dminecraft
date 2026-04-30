@@ -29,9 +29,12 @@
 <input type="range" min="0" max="255" step="1" id="red" class="range">
 <input type="range" min="0" max="255" step="1" id="green" class="range">
 <input type="range" min="0" max="255" step="1" id="blue" class="range">
+<button onclick="tt()">off</button>
 <script>
   let h = window.innerHeight;
   let w = window.innerWidth;
+  let can = true;
+  let tt = () => can = !can;
   let g = "#000000";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
@@ -43,9 +46,11 @@
       i.style.height = `${h/5}px`;
       i.style.border = "1px solid black";
       i.onclick = () => {
-        i.style.background = g;
-        i.innerText = g;
-        i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
+        if (can) {
+          i.style.background = g;
+          i.innerText = g;
+          i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
+        }
       };
       document.getElementById("a").appendChild(i)
     }
@@ -65,5 +70,7 @@
     document.querySelectorAll(".range").forEach(k => {
       k.style.width = `${w-h-12}px`
     });
+
+   document.querySelector("[onclick^='t']").innerText = can ? "off" : "on"
   }, 50)
 </script>
