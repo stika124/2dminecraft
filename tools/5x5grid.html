@@ -33,6 +33,12 @@
    bottom: 51vh;
    right: 6px;
   }
+  [onclick^="c"] {
+   position: absolute;
+   top: 50vh;
+   right: 6px;
+   transform: translate(0, -50%)
+  }
  
 </style>
 <div id="a"></div>
@@ -42,13 +48,16 @@
 <input type="range" min="0" max="255" step="1" id="blue" class="range">
 <button onclick="tt()">paint off</button>
 <button onclick="gg()">grid off</button>
+<button onclick="cc()">copy [[..]]</button>
 <script>
   let h = window.innerHeight;
   let w = window.innerWidth;
+  let build = [[], ""];
   let can = true;
   let grid = true;
   let tt = () => can = !can;
   let gg = () => grid = !grid;
+  let cc = () => navigator.clipboard.writeText(build[1])
   let g = "#000000";
   for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
@@ -64,6 +73,7 @@
         if (can) {
           i.style.background = g;
           i.innerText = g;
+          i.dataset.color = g;
           i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
         }
       };
@@ -89,5 +99,12 @@
    document.querySelector("[onclick^='t']").innerText = can ? "paint off" : "paint on";
    document.querySelector("[onclick^='g']").innerText = grid ? "grid off" : "grid on";
    document.querySelectorAll(".grid").forEach(l => l.style.border = grid ? "1px solid black" : "none")
+   document.querySelectorAll(".grid").forEach(l => l.style.color = grid ? l.dataset.color : "transparent")
+   build[0] = [[{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}]]
+   build[1] = JSON.stringify(build[0])
   }, 50)
 </script>
