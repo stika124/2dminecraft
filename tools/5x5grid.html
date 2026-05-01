@@ -75,12 +75,17 @@
           i.innerText = g;
           i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
           i.dataset.color = i.style.color;
+          build[0][y][x].color = g;
         }
       };
       document.getElementById("a").appendChild(i)
     }
   }
-
+build[0] = [[{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
+               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}]]
   setInterval(() => {
     let h = window.innerHeight;
     let w = window.innerWidth;
@@ -100,11 +105,7 @@
    document.querySelector("[onclick^='g']").innerText = grid ? "grid off" : "grid on";
    document.querySelectorAll(".grid").forEach(l => l.style.border = grid ? "1px solid black" : "none")
    document.querySelectorAll(".grid").forEach(l => l.style.color = grid ? l.dataset.color : "transparent")
-   build[0] = [[{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
-               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
-               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
-               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}],
-               [{color: ""},{color: ""},{color: ""},{color: ""},{color: ""}]]
+   
    build[1] = JSON.stringify(build[0])
   }, 50)
 </script>
