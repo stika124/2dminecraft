@@ -57,8 +57,8 @@ while running:
     for ifL, faceLine in enumerate(face):
       for ifP, facePiece in enumerate(faceLine):
         i = pygame.time.get_ticks() / facePiece.get("animation", 1000)
-        T = htr(facePiece["color"][i // 1 % facePiece["color"].__len__()])
-        TT = htr(facePiece["color"][( i // 1 + 1 ) % facePiece["color"].__len__()])
+        T = htr(facePiece["color"][int(i // 1 % facePiece["color"].__len__())])
+        TT = htr(facePiece["color"][int(( i // 1 + 1 ) % facePiece["color"].__len__())])
         color = [ T[K] + (TT[K] - T[K]) * (i % 1) for K in range(3) ]
         pygame.draw.rect(screen, color, tuple(getBlockPixels(block["coor"][0], block["coor"][1], ifP, ifL)+[DATA["blockWidth"]/DATA["blockSubPixels"], DATA["blockWidth"]/DATA["blockSubPixels"]]))
 
