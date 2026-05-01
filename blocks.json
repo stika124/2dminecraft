@@ -47,5 +47,53 @@
         ]
       }
     }
+  }, 
+  "dirt": {
+    "face": [
+      [
+        {"color":"#8c5d32"},
+        {"color":"#794927"},
+        {"color":"#804f27"},
+        {"color":"#805732"},
+        {"color":"#805732"}
+      ], [
+        {"color":"#805732"},
+        {"color":"#8c5d32"},
+        {"color":"#805732"},
+        {"color":"#794927"},
+        {"color":"#805732"}
+      ], [
+        {"color":"#794927"},
+        {"color":"#805732"},
+        {"color":"#8c5d32"},
+        {"color":"#804f27"},
+        {"color":"#804f27"}
+      ], [
+        {"color":"#804f27"},
+        {"color":"#8c5d32"},
+        {"color":"#805732"},
+        {"color":"#805732"},
+        {"color":"#805732"}
+      ], [
+        {"color":"#8c5d32"},
+        {"color":"#804f27"},
+        {"color":"#805d32"}, 
+        {"color":"#805d32"},
+        {"color":"#805727"}
+      ]
+    ],
+    "other": {
+      "breakTime": 900,
+      "drops": {
+        "beforeCode": "",
+        "conditions": [
+          {
+            "condition": "True",
+            "drops": [
+              {"item": "dirt"}
+            ]
+        ]
+      }
+    }
   }
 }
