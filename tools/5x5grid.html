@@ -73,8 +73,8 @@
         if (can) {
           i.style.background = g;
           i.innerText = g;
-          i.dataset.color = g;
           i.style.color = (Number(g.at(-2)) < 8) ? "white" : "black"
+          i.dataset.color = i.style.color;
         }
       };
       document.getElementById("a").appendChild(i)
