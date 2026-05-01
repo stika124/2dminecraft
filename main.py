@@ -21,14 +21,7 @@ screen = pygame.display.set_mode((600, 400))
 pygame.display.set_caption("2d mc")
 pygame.mouse.set_visible(False)
 camera = [0, 0]
-world = {
-  "block": [
-    {
-      "block": "grass_block",
-      "coor": [0, 0]
-    }
-  ]
-}
+
 def getBlockPixels(x, y, subX=0, subY=0):
   return [(x-camera[0])*DATA["blockWidth"]+subX*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["widthScreen"]/2, 
           ((-y)-camera[1])*DATA["blockWidth"]+subY*(DATA["blockWidth"]/DATA["blockSubPixels"])+DATA["heightScreen"]/2]
@@ -41,7 +34,9 @@ def htr(h):
 
 with open("blocks.json") as file:
   blocks = json.load(file)
-
+with open(input("")) as f:
+  world = json.load(f)  
+  
 clock = pygame.time.Clock()
 running = True
 while running:
