@@ -64,7 +64,7 @@ while running:
 
   # player cursor
   player_mouseX, player_mouseY = pygame.mouse.get_pos()
-  pygame.draw.rect(screen, ( 200, 200, 200 ), map(lambda x: x - DATA["blockWidth"]/DATA["blockSubPixels"]/6, pygame.mouse.get_pos())+(DATA["blockWidth"]/DATA["blockSubPixels"]/3)*2)
+  pygame.draw.rect(screen, ( 200, 200, 200 ), tuple(map(lambda x: x - DATA["blockWidth"]/DATA["blockSubPixels"]/6, pygame.mouse.get_pos()))+(DATA["blockWidth"]/DATA["blockSubPixels"]/3,)*2)
   pygame.display.flip()
   clock.tick(60)
 pygame.quit()
