@@ -8,6 +8,12 @@ class Info:
 
   def getRandom(self, f, t):
     return f + random.random() * (t - f)
+ 
+  def getBlock(x, y):
+    for C in world:
+      if (C["coor"] == [x, y]):
+        return C
+    return null
 
 DATA = {
   "blockWidth": 100,
