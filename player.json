@@ -1,0 +1,35 @@
+{
+  "face": [
+    [
+      {"color":""},
+      {"color":"#623810"},
+      {"color":"#cca769"},
+      {"color":"#623810"},
+      {"color":""}
+    ], [
+      {"color":""},
+      {"color":"#cca769"},
+      {"color":"#d68a76"},
+      {"color":"#cca769"},
+      {"color":""}
+    ], [
+      {"color":"#5c7cd8"},
+      {"color":"#5c7bdf"},
+      {"color":"#5c7bdf"},
+      {"color":"#5c7bdf"},
+      {"color":"#5c7cd8"}
+    ], [
+      {"color":"#ccad67"},
+      {"color":"#5c7bdf"},
+      {"color":"#5c7bdf"},
+      {"color":"#5c7bdf"},
+      {"color":"#ccad67"}
+    ], [
+      {"color":""},
+      {"color":"#403a32"}
+      {"color":""},
+      "color":"#403a32"},
+      {"color":""}
+    ]
+  ]
+}
