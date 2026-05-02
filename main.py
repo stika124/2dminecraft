@@ -67,21 +67,24 @@ class Engine:
       face = blocks[block["block"]]["face"]
       for ifL, faceLine in enumerate(face):
         for ifP, facePiece in enumerate(faceLine):
-          i = pygame.time.get_ticks() / facePiece.get("animation", 1000)
-          T = htr(facePiece["color"][int(i // 1 % facePiece["color"].__len__())])
-          TT = htr(facePiece["color"][int(( i // 1 + 1 ) % facePiece["color"].__len__())])
-          color = [ T[K] + (TT[K] - T[K]) * (i % 1) for K in range(3) ]
-          pygame.draw.rect(screen, color, tuple(getBlockPixels(block["coor"][0], block["coor"][1], ifP, ifL)+[DATA["blockWidth"]/DATA["blockSubPixels"], DATA["blockWidth"]/DATA["blockSubPixels"]]))
+          if facePiece["color"] == None:
+            i = pygame.time.get_ticks() / facePiece.get("animation", 1000)
+            T = htr(facePiece["color"][int(i // 1 % facePiece["color"].__len__())])
+            TT = htr(facePiece["color"][int(( i // 1 + 1 ) % facePiece["color"].__len__())])
+            color = [ T[K] + (TT[K] - T[K]) * (i % 1) for K in range(3) ]
+            pygame.draw.rect(screen, color, tuple(getBlockPixels(block["coor"][0], block["coor"][1], ifP, ifL)+[DATA["blockWidth"]/DATA["blockSubPixels"], DATA["blockWidth"]/DATA["blockSubPixels"]]))
+  
   def renderWorldPlayer():
     face = playerjson["player"]
     for ifL, faceLine in enumerate(face):
         for ifP, facePiece in enumerate(faceLine):
-          i = pygame.time.get_ticks() / facePiece.get("animation", 1000)
-          T = htr(facePiece["color"][int(i // 1 % facePiece["color"].__len__())])
-          TT = htr(facePiece["color"][int(( i // 1 + 1 ) % facePiece["color"].__len__())])
-          color = [ T[K] + (TT[K] - T[K]) * (i % 1) for K in range(3) ]
-          pygame.draw.rect(screen, color, tuple(getBlockPixels(block["coor"][0], block["coor"][1], ifP, ifL)+[DATA["blockWidth"]/DATA["blockSubPixels"], DATA["blockWidth"]/DATA["blockSubPixels"]]))
-  
+          if facePiece["color"] == None:
+            i = pygame.time.get_ticks() / facePiece.get("animation", 1000)
+            T = htr(facePiece["color"][int(i // 1 % facePiece["color"].__len__())])
+            TT = htr(facePiece["color"][int(( i // 1 + 1 ) % facePiece["color"].__len__())])
+            color = [ T[K] + (TT[K] - T[K]) * (i % 1) for K in range(3) ]
+            pygame.draw.rect(screen, color, tuple(getBlockPixels(block["coor"][0], block["coor"][1], ifP, ifL)+[DATA["blockWidth"]/DATA["blockSubPixels"], DATA["blockWidth"]/DATA["blockSubPixels"]]))
+    
   @staticmethod
   def controlMove():
     global camera
