@@ -1,7 +1,6 @@
 This is example of block with full tree and thsi sis used as a default for **?** attributes
 
 ```
-
 {
   "example": {
     "face": [
@@ -12,20 +11,19 @@ This is example of block with full tree and thsi sis used as a default for **?**
     "other":{
       "breakTime?": 1000
       "drops?": {
-         "beforeCode?": "rarity = random.random()",
-         "conditions": [
-           {
-             "condition": "rarity > 0.5",
-             "drops": [
-               {
-                 item: "example_item"
-               }
-             ]
-           }
-         ]
+        "beforeCode?": "rarity = random.random()",
+          "conditions": [
+          {
+            "condition": "rarity > 0.5",
+            "drops": [
+              {
+              item: "example_item"
+              }
+            ]
+          }
+        ]
       }
     }
   }
 }
-
 ```
